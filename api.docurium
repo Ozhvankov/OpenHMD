@@ -1,0 +1,7 @@
+{
+ "name":   "OpenHMD",
+ "github": "OpenHMD/OpenHMD",
+ "input":  "include",
+ "prefix": "ohmd_",
+ "output": "docs"
+}
