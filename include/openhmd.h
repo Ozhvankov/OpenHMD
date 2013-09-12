@@ -36,38 +36,80 @@ typedef enum {
 
 typedef enum {
 	OHMD_ROTATION_QUAT                    =  1,
+	 /*! float[4], get
+		Device absolute rotation of the device, in space, as a quaternion. */
 
 	OHMD_LEFT_EYE_GL_MODELVIEW_MATRIX     =  2,
+	/*! float[16], get
+	      A "ready to use" OpenGL style 4x4 matrix with a modelview matrix for the left eye of the HMD. */
+
+
 	OHMD_RIGHT_EYE_GL_MODELVIEW_MATRIX    =  3,
+	/*! float[16], get
+	      A "ready to use" OpenGL style 4x4 matrix with a modelview matrix for the right eye of the HMD. */
 
 	OHMD_LEFT_EYE_GL_PROJECTION_MATRIX    =  4,
+	/*! float[16], get
+	      A "ready to use" OpenGL style 4x4 matrix with a projection matrix for the left eye of the HMD. */
 	OHMD_RIGHT_EYE_GL_PROJECTION_MATRIX   =  5,
+	/*! float[16], get
+	      A "ready to use" OpenGL style 4x4 matrix with a projection matrix for the right eye of the HMD. */
 
 	OHMD_POSITION_VECTOR                  =  6,
+	/*! float[3], get
+	      A 3-D vector representing the absolute position of the device, in space. */
 
 	OHMD_SCREEN_HORIZONTAL_SIZE           =  7,
+	/*! float[1], get
+	      Physical width of the device screen, in centimeters. */
 	OHMD_SCREEN_VERTICAL_SIZE             =  8,
+	/*! float[1], get
+	      Physical height of the device screen, in centimeters. */
 
 	OHMD_LENS_HORIZONTAL_SEPARATION       =  9,
+	/*! float[1], get
+	      Physical speration of the device lenses, in centimeters. */
 	OHMD_LENS_VERTICAL_POSITION           = 10,
+	/*! float[1], get
+	      Physical vertical position of the lenses, in centimeters. */
 
 	OHMD_LEFT_EYE_FOV                     = 11,
+	/*! float[1], get
+	      Physical field of view for the left eye, in degrees. */
 	OHMD_LEFT_EYE_ASPECT_RATIO            = 12,
+	/*! float[1], get
+	      Physical display aspect ratio for the left eye screen. */
 	OHMD_RIGHT_EYE_FOV                    = 13,
+	/*! float[1], get
+	      Physical field of view for the left right, in degrees. */
 	OHMD_RIGHT_EYE_ASPECT_RATIO           = 14,
+	/*! float[1], get
+	      Physical display aspect ratio for the right eye screen. */
 
 	OHMD_EYE_IPD                          = 15,
+	/*! float[1], get/set
+	      Physical interpupilary distance of the user, in centimeters. */
 
 	OHMD_PROJECTION_ZFAR                  = 16,
+	/*! float[1], get/set
+	      Z-far value for the projection matrix calculations, i.e. drawing distance. */
 	OHMD_PROJECTION_ZNEAR                 = 17,
+	/*! float[1], get/set
+	      Z-near value for the projection matrix calculations, i.e. close clipping distance. */
 
 	OHMD_DISTORTION_K                     = 18,
+	/*! float[6], get/set
+	      Device specifc distortion value. */
 
 } ohmd_float_value;
 
 typedef enum {
 	OHMD_SCREEN_HORIZONTAL_RESOLUTION     =  0,
+	/*! int[1], get
+	      Physical horizontal resolution of the device screen. */
 	OHMD_SCREEN_VERTICAL_RESOLUTION       =  1,
+	/*! int[1], get
+	      Physical vertical resolution of the device screen. */
 
 } ohmd_int_value;
 
@@ -158,8 +200,9 @@ OHMD_APIENTRY ohmd_device* ohmd_list_open_device(ohmd_context* ctx, int index);
 /**
  * Get a floating point value from a device.
  *
+ * 
  * @param device An open device to retreive the value from.
- * @param type What type of value to retreive.
+ * @param type What type of value to retreive, see ohmd_float_value section for more information.
  * @param[out] A pointer to a float, or float array where the retreived value should be written.
  * @return 0 on success, <0 on failure.
  */
@@ -169,7 +212,7 @@ OHMD_APIENTRY int ohmd_device_getf(ohmd_device* device, ohmd_float_value type, f
  * Set a floating point value for a device.
  *
  * @param device An open device to set the value in.
- * @param type What type of value to set.
+ * @param type What type of value to set, see ohmd_float_value section for more information.
  * @param A pointer to a float, or float array where the new value is stored.
  * @return 0 on success, <0 on failure.
  */
@@ -179,7 +222,7 @@ OHMD_APIENTRY int ohmd_device_setf(ohmd_device* device, ohmd_float_value type, f
  * Get an integer value from a device. 
  *
  * @param device An open device to retreive the value from.
- * @param type What type of value to retreive.
+ * @param type What type of value to retreive, ohmd_int_value section for more information.
  * @param[out] A pointer to an integer, or integer array where the retreived value should be written.
  * @return 0 on success, <0 on failure.
  */
