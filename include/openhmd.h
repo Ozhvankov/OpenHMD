@@ -5,6 +5,10 @@
  * Distributed under the Boost 1.0 licence, see LICENSE for full text.
  */
 
+/** \file openhmd.h
+ * Main header for OpenHMD public API.
+ */
+
 #ifndef OPENHMD_H
 #define OPENHMD_H
 
