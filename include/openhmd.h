@@ -197,7 +197,7 @@ OHMD_APIENTRY ohmd_device* ohmd_list_open_device(ohmd_context* ctx, int index);
  * 
  * @param device An open device to retreive the value from.
  * @param type What type of value to retreive, see ohmd_float_value section for more information.
- * @param[out] A pointer to a float, or float array where the retreived value should be written.
+ * @param[out] out A pointer to a float, or float array where the retreived value should be written.
  * @return 0 on success, <0 on failure.
  */
 OHMD_APIENTRY int ohmd_device_getf(ohmd_device* device, ohmd_float_value type, float* out);
@@ -207,7 +207,7 @@ OHMD_APIENTRY int ohmd_device_getf(ohmd_device* device, ohmd_float_value type, f
  *
  * @param device An open device to set the value in.
  * @param type What type of value to set, see ohmd_float_value section for more information.
- * @param A pointer to a float, or float array where the new value is stored.
+ * @param in A pointer to a float, or float array where the new value is stored.
  * @return 0 on success, <0 on failure.
  */
 OHMD_APIENTRY int ohmd_device_setf(ohmd_device* device, ohmd_float_value type, float* in);
@@ -217,7 +217,7 @@ OHMD_APIENTRY int ohmd_device_setf(ohmd_device* device, ohmd_float_value type, f
  *
  * @param device An open device to retreive the value from.
  * @param type What type of value to retreive, ohmd_int_value section for more information.
- * @param[out] A pointer to an integer, or integer array where the retreived value should be written.
+ * @param[out] out A pointer to an integer, or integer array where the retreived value should be written.
  * @return 0 on success, <0 on failure.
  */
 OHMD_APIENTRY int ohmd_device_geti(ohmd_device* device, ohmd_int_value type, int* out);
