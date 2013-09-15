@@ -43,7 +43,7 @@ typedef enum {
 /** A collection of float value information types used for getting and setting information with 
  ohmd_device_getf() and ohmd_device_setf(). */
 typedef enum {
-	/** float[4], get - Device absolute rotation of the device, in space, as a quaternion. */
+	/** float[4], get - Absolute rotation of the device, in space, as a quaternion. */
 	OHMD_ROTATION_QUAT                    =  1,
 
 	/** float[16], get - A "ready to use" OpenGL style 4x4 matrix with a modelview matrix for the 
@@ -93,7 +93,7 @@ typedef enum {
 	 distance. */
 	OHMD_PROJECTION_ZNEAR                 = 17,
 
-	/** float[6], get/set - Device specifc distortion value. */
+	/** float[6], get - Device specifc distortion value. */
 	OHMD_DISTORTION_K                     = 18,
 
 } ohmd_float_value;
